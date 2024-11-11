@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ropa y accesorios para hombres con las últimas tendencias">
+    <title>Hombre | Fashion Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pestañas.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo de tienda de ropa.png" alt="Fashion Store Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="mujer.html">Mujer</a></li>
+                    <li><a href="hombre.html">Hombre</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Ropa para Hombre</h1>
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="camisetas">Camisetas</div>
+                <div class="tab" data-tab="pantalones">Pantalones</div>
+                <div class="tab" data-tab="chaquetas">Chaquetas</div>
+            </div>
+            <div class="tab-content active" id="camisetas">
+                <img src="/Frontend/images/camisah.jpg" alt="Camiseta Casual">
+                <h3>Camiseta Casual</h3>
+                <p>Precio: $ 24.999 pesos</p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+            <div class="tab-content" id="pantalones">
+                <img src="images/pantalonhombre.jpg" alt="Pantalones Cortos">
+                <h3>Pantalones Cortos</h3>
+                <p>Precio: $ 34.999 pesos </p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+            <div class="tab-content" id="chaquetas">
+                <img src="images/chaquetacuero.jpg" alt="Chaqueta de Cuero">
+                <h3>Chaqueta de Cuero</h3>
+                <p>Precio: $ 99.999 pesos</p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+        </div>
+        <button onclick="window.location.href='index.html'" class="btn btn-secondary">Volver a la Página Inicial</button>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <h3>Atención al Cliente</h3>
+            <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Envíos y Devoluciones</a></li>
+            </ul>
+            <div class="copyright">
+                © 2024 Fashion Store. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    // Remover la clase "active" de todas las pestañas y contenido
+                    tabs.forEach(item => item.classList.remove("active"));
+                    contents.forEach(content => content.classList.remove("active"));
+
+                    // Agregar la clase "active" a la pestaña y el contenido seleccionados
+                    tab.classList.add("active");
+                    document.getElementById(tab.dataset.tab).classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

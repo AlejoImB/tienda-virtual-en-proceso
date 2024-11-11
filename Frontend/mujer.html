@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ropa y accesorios para mujeres con las últimas tendencias">
+    <title>Mujer | Fashion Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pestañas.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo de tienda de ropa.png" alt="Fashion Store Logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="mujer.html">Mujer</a></li>
+                    <li><a href="hombre.html">Hombre</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Ropa para Mujer</h1>
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="vestidos">Vestidos</div>
+                <div class="tab" data-tab="tops">Tops</div>
+                <div class="tab" data-tab="pantalones">Pantalones</div>
+            </div>
+            <div class="tab-content active" id="vestidos">
+                <img src="/Frontend/images/vestidoelegante.jpg" alt="Vestido Elegante">
+                <h3>Vestido Elegante</h3>
+                <p>Precio: $ 49.999</p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+            <div class="tab-content" id="tops">
+                <img src="/Frontend/images/girl.jpg" alt="Top de Verano">
+                <h3>Top de Verano</h3>
+                <p>Precio: $ 29.999</p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+            <div class="tab-content" id="pantalones">
+                <img src="/Frontend/images/vertical-portrait-calm-beautiful-girl-standing-street-high-quality-photo.jpg" alt="Pantalones Casual">
+                <h3>Pantalones Casual</h3>
+                <p>Precio: $ 39.999</p>
+                <button class="btn btn-primary">Añadir al Carrito</button>
+            </div>
+        </div>
+        <button onclick="window.location.href='index.html'" class="btn btn-secondary">Volver a la Página Inicial</button>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <h3>Atención al Cliente</h3>
+            <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Envíos y Devoluciones</a></li>
+            </ul>
+            <div class="copyright">
+                © 2024 Alejandro Imbachi Escalante. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    // Remover la clase "active" de todas las pestañas y contenido
+                    tabs.forEach(item => item.classList.remove("active"));
+                    contents.forEach(content => content.classList.remove("active"));
+
+                    // Agregar la clase "active" a la pestaña y el contenido seleccionados
+                    tab.classList.add("active");
+                    document.getElementById(tab.dataset.tab).classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

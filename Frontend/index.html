@@ -1,0 +1,363 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="La mejor tienda de ropa con las últimas tendencias de moda">
+        <title>Fashion Store | Tu Estilo, Tu Moda</title>
+        
+        <!-- Fuentes de Google -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- Swiper JS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+        
+        <!-- CSS personalizado -->
+        <link rel="stylesheet" href="styles.css">
+        
+        <!-- Favicon -->
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    <body>
+        <!-- Barra de anuncios -->
+        <div class="announcement-bar">
+            <div class="swiper announcement-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">🚚 Envío gratis en pedidos superiores a 150.000 Pesos</div>
+                    <div class="swiper-slide">🎉 20% OFF en nueva colección - Código: NUEVO20</div>
+                    <div class="swiper-slide">⭐ Devoluciones gratis durante 30 días</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header con menú desplegable -->
+        <header class="header">
+            <div class="header-inner">
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <a href="/" class="logo">
+                    <img src="images/logo de tienda de ropa.png" alt="Fashion Store Logo">
+                </a>
+
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="mujer.html" class="dropdown-toggle">Mujer</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-column">
+                                        <h4>Ropa</h4>
+                                        <ul>
+                                            <li><a href="#">Vestidos</a></li>
+                                            <li><a href="#">Tops</a></li>
+                                            <li><a href="#">Pantalones</a></li>
+                                            <li><a href="#">Faldas</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <h4>Accesorios</h4>
+                                        <ul>
+                                            <li><a href="#">Bolsos</a></li>
+                                            <li><a href="#">Joyería</a></li>
+                                            <li><a href="#">Zapatos</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <img src="/api/placeholder/200/300" alt="Colección Mujer">
+                                        <a href="#" class="promo-link">Nueva Colección</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="hombre.html" class="dropdown-toggle">Hombre</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-content">
+                                    <div class="dropdown-column">
+                                        <h4>Ropa</h4>
+                                        <ul>
+                                            <li><a href="#">Camisetas</a></li>
+                                            <li><a href="#">Pantalones</a></li>
+                                            <li><a href="#">Chaquetas</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <h4>Accesorios</h4>
+                                        <ul>
+                                            <li><a href="#">Relojes</a></li>
+                                            <li><a href="#">Zapatos</a></li>
+                                            <li><a href="#">Cinturones</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown-column">
+                                        <img src="/api/placeholder/200/300" alt="Colección Hombre">
+                                        <a href="#" class="promo-link">Tendencias 2024</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                        <li><a href="novedades.html">Novedades</a></li>
+                    </ul>
+                </nav>
+
+                <div class="user-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Buscar productos...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <a href="#" class="user-icon" id="userMenuToggle">
+                        <i class="fas fa-user"></i>
+                        <div class="user-dropdown">
+                            <ul>
+                                <li><a href="#">Mi Cuenta</a></li>
+                                <li><a href="#">Mis Pedidos</a></li>
+                                <li><a href="#">Lista de Deseos</a></li>
+                                <li><a href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="cart-icon" id="cartToggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Carrito lateral -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="close-cart" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items">
+                <!-- Los items del carrito se cargarán dinámicamente -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">$ 0.00 pesos</span>
+                </div>
+                <button class="btn-checkout">Finalizar Compra</button>
+            </div>
+        </div>
+
+        <main>
+            <!-- Hero Section con Slider -->
+            <section class="hero-slider">
+                <div class="swiper hero-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="hero-slide" style="background-image: url('images/crew-EMWgB-BTyh0-unsplash\(1\).jpg');">
+                                <div class="hero-content">
+                                    <h1>Nueva Colección Primavera</h1>
+                                    <p>Descubre las últimas tendencias en moda</p>
+                                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="hero-slide" style="background-image: url('images/artificial-photography-vB5qtt8X4NA-unsplash.jpg');">
+                                <div class="hero-content">
+                                    <h1>Ofertas Especiales</h1>
+                                    <p>Hasta 50% de descuento en selección</p>
+                                    <a href="#" class="btn btn-primary">Ver Ofertas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+
+            <!-- Categorías Destacadas -->
+            <section class="featured-categories">
+                <h2>Categorías Destacadas</h2>
+                <div class="category-grid">
+                    <a href="#" class="category-card">
+                        <img src="images/burgess-milner-OYYE4g-I5ZQ-unsplash.jpg" alt="Ropa Mujer">
+                        <div class="category-content">
+                            <h3>Mujer</h3>
+                            <p>Ver Colección</p>
+                        </div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/kai-pilger-7YwWjgS7aJs-unsplash.jpg" alt="Ropa Hombre">
+                        <div class="category-content">
+                            <h3>Hombre</h3>
+                            <p>Ver Colección</p>
+                        </div>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/arthur-guiot-PIKyHi0jsAI-unsplash.jpg" alt="Accesorios">
+                        <div class="category-content">
+                            <h3>Accesorios</h3>
+                            <p>Ver Colección</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+         <!-- Productos Destacados -->
+         <section class="featured-products">
+            <div class="section-header">
+                <h2>Productos Destacados</h2>
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="new">Nuevos</button>
+                    <button class="filter-btn" data-filter="popular">Populares</button>
+                    <button class="filter-btn" data-filter="sale">Ofertas</button>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/1100ab8ebcb902ff9c9a9c2aa2fed307.gif" alt="Producto 1">
+                    </div>
+                    <div class="product-info">
+                        <h3>Producto 1</h3>
+                        <div class="product-price">Precio: $ 29.999 pesos</div>
+                        <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/giphy.gif" alt="Producto 2">
+                    </div>
+                    <div class="product-info">
+                        <h3>Producto 2</h3>
+                        <div class="product-price">Precio: $ 39.999 pesos</div>
+                        <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Cover-accesorios3.gif" alt="Producto 3">
+                    </div>
+                    <div class="product-info">
+                        <h3>Producto 3</h3>
+                        <div class="product-price">Precio: $ 49.999 pesos</div>
+                        <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/a5a157cecb945c3da01bd16584b59a2e_w200.gif" alt="Producto 4">
+                    </div>
+                    <div class="product-info">
+                        <h3>Producto 4</h3>
+                        <div class="product-price">Precio: $ 19.999 pesos</div>
+                        <button class="btn btn-primary add-to-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+            <!-- Banner Promocional -->
+            <section class="promo-banner">
+                <div class="promo-content">
+                    <h2>Ofertas Especiales</h2>
+                    <p>Hasta 50% de descuento en selección</p>
+                    <a href="#" class="btn btn-secondary">Ver Ofertas</a>
+                </div>
+                <img src="images/arno-senoner-UhvEJosq-Zo-unsplash(1).jpg" alt="Promoción Especial">
+            </section>
+
+            <!-- Newsletter -->
+            <section class="newsletter">
+                <div class="newsletter-content">
+                    <h2>Únete a Nuestra Newsletter</h2>
+                    <p>Recibe las últimas novedades y ofertas exclusivas</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn btn-primary">Suscribirse</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-column">
+                    <h3>Atención al Cliente</h3>
+                    <ul>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                        <li><a href="#">Guía de Tallas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Nuestra Empresa</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Trabaja con Nosotros</a></li>
+                        <li><a href="#">Sostenibilidad</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h3>Métodos de Pago</h3>
+                        <img src="images/file.png" alt="Métodos de pago">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2024 Alejandro Imbachi Escalante. Todos los derechos reservados.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Overlay para menús desplegables -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+    </html>
